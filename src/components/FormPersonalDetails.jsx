@@ -23,21 +23,21 @@ class FormPersonalDetails extends Component {
           <AppBar title="Enter Personal Details" />
           <TextField
             hintText="Enter Occupation"
-            floatingLabelFixed="Occupation"
+            floatingLabelText="Occupation"
             onChange={handleChange("occupation")}
             defaultValue={values.occupation}
           />
           <br />
           <TextField
             hintText="Enter City"
-            floatingLabelFixed="City"
+            floatingLabelText="City"
             onChange={handleChange("city")}
             defaultValue={values.city}
           />
           <br />
           <TextField
             hintText="Enter Bio"
-            floatingLabelFixed="Bio"
+            floatingLabelText="Bio"
             onChange={handleChange("bio")}
             defaultValue={values.bio}
           />
