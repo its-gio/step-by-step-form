@@ -2,6 +2,7 @@ import React from "react";
 import FormUserDetails from "./FormUserDetails.jsx";
 import FormPersonalDetails from "./FormPersonalDetails.jsx";
 import Confirm from "./Confirm.jsx";
+import Sucess from "./Sucess.jsx";
 
 export default class UserForm extends React.Component {
   state = {
@@ -77,7 +78,7 @@ export default class UserForm extends React.Component {
           />
         );
       case 4:
-        return <h1>Sucess</h1>;
+        return <Sucess />;
       default:
         return (
           <FormUserDetails
