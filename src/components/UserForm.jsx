@@ -1,5 +1,5 @@
 import React from "react";
-import FormUserDetails from "FormUserDetails.jsx";
+import FormUserDetails from "./FormUserDetails.jsx";
 
 export default class UserForm extends React.Component {
   state = {
