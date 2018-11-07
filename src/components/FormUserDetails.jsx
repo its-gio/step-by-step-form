@@ -12,11 +12,17 @@ class FormUserDetails extends Component {
 
   render() {
     //  Now values can be used as a variable of props
-    const { values } = this.props;
+    const { values, handleChange } = this.props;
     return (
       <MuiThemeProvider>
         <React.Fragment>
           <AppBar title="Enter User Details" />
+          <TextField
+            hintText="Enter First Name"
+            floatingLabelFixed="First Name"
+            onChange={handleChange("firstName")}
+            defaultValue={values.firstName}
+          />
         </React.Fragment>
       </MuiThemeProvider>
     );
