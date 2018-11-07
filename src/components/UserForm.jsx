@@ -1,6 +1,7 @@
 import React from "react";
 import FormUserDetails from "./FormUserDetails.jsx";
 import FormPersonalDetails from "./FormPersonalDetails.jsx";
+import Confirm from "./Confirm.jsx";
 
 export default class UserForm extends React.Component {
   state = {
@@ -67,7 +68,14 @@ export default class UserForm extends React.Component {
           />
         );
       case 3:
-        return <h1>Confirm</h1>;
+        return (
+          <Confirm
+            nextStep={this.nextStep}
+            prevStep={this.prevStep}
+            handleChange={this.handleChange}
+            values={values}
+          />
+        );
       case 4:
         return <h1>Sucess</h1>;
       default:
