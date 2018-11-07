@@ -1,13 +1,69 @@
 import React, { Component } from "react";
+import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
+import AppBar from "material-ui/AppBar";
+import TextField from "material-ui/TextField";
+import RaisedButton from "material-ui/RaisedButton";
 
 class FormPersonalDetails extends Component {
+  continue = e => {
+    e.preventDefault();
+    this.props.nextStep();
+  };
+  back = e => {
+    e.preventDefault();
+    this.props.prevStep();
+  };
+
   render() {
+    //  Now values can be used as a variable of props
+    const { values, handleChange } = this.props;
     return (
-      <div>
-        <h1>Form Personal Details</h1>
-      </div>
+      <MuiThemeProvider>
+        <React.Fragment>
+          <AppBar title="Enter Personal Details" />
+          <TextField
+            hintText="Enter Occupation"
+            floatingLabelFixed="Occupation"
+            onChange={handleChange("occupation")}
+            defaultValue={values.occupation}
+          />
+          <br />
+          <TextField
+            hintText="Enter City"
+            floatingLabelFixed="City"
+            onChange={handleChange("city")}
+            defaultValue={values.city}
+          />
+          <br />
+          <TextField
+            hintText="Enter Bio"
+            floatingLabelFixed="Bio"
+            onChange={handleChange("bio")}
+            defaultValue={values.bio}
+          />
+          <br />
+          <RaisedButton
+            label="Continue"
+            primary={true}
+            style={styles.button}
+            onClick={this.continue}
+          />
+          <RaisedButton
+            label="Back"
+            primary={false}
+            style={styles.button}
+            onClick={this.back}
+          />
+        </React.Fragment>
+      </MuiThemeProvider>
     );
   }
 }
+
+const styles = {
+  button: {
+    margin: 15
+  }
+};
 
 export default FormPersonalDetails;
